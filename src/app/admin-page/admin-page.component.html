@@ -1,0 +1,14 @@
+<div style=" height: 100%;" class="container">
+  <div style="text-align: center">
+    <button (click)="add()">Add New Image</button>
+  </div>
+  <ag-grid-angular
+    style="height: 100%; width: 70%;"
+    [rowHeight]= 100
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData$ | async"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>
+</div>

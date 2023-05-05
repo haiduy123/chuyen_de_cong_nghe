@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="wrapper">
+        <div class="title"><span>Login Form</span></div>
+        <form [formGroup]="userAddForm">
+            <div class="content-form">
+                <div class="input">
+                    <label>Email</label>
+                    <input type="text" formControlName="email" [(ngModel)]="admin.email" />
+                </div>
+                <div class="input">
+                    <label>Name</label>
+                    <input type="text" formControlName="name" [(ngModel)]="admin.name" />
+                </div>
+                <div class="input">
+                    <label>Phone</label>
+                    <input type="text" formControlName="phone" [(ngModel)]="admin.phone" />
+                </div>
+                <div class="input">
+                    <label>Username</label>
+                    <input type="text" formControlName="username" [(ngModel)]="admin.username" />
+                </div>
+                <div class="input">
+                    <label>Website</label>
+                    <input type="text" formControlName="website" [(ngModel)]="admin.website" />
+                </div>
+            </div>
+            <div class="row button">
+                <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">Not a member? <a routerLink="/admin">Signup now</a></div>
+        </form>
+    </div>
+</div>
