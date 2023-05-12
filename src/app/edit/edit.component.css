@@ -14,7 +14,8 @@
   .container{
     max-width: 440px;
     padding: 0 20px;
-    margin: 170px auto;
+    margin: auto;
+    margin-top: 15px;
   }
   .wrapper{
     width: 100%;
@@ -121,4 +122,6 @@
   }
   label {
     margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
   }

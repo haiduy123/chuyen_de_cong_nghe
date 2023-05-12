@@ -1,33 +1,44 @@
-<div class="container">
-    <div class="wrapper">
-        <div class="title"><span>Login Form</span></div>
-        <form [formGroup]="userAddForm">
-            <div class="content-form">
-                <div class="input">
-                    <label>Email</label>
-                    <input type="text" formControlName="email" [(ngModel)]="admin.email" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="title"><span>Save or Edit Image</span></div>
+            <form [formGroup]="userAddForm" (submit)="saveImage()">
+                <div class="content-form">
+                    <div class="input">
+                        <label>Name</label>
+                        <input type="text" formControlName="name" [(ngModel)]="image.name" />
+                    </div>
+                    <div class="input">
+                        <label>Pic</label>
+                        <input type="text" formControlName="pic" [(ngModel)]="image.pic" />
+                    </div>
+                    <div class="input">
+                        <label>Intro</label>
+                        <input formControlName="intro" [(ngModel)]="image.intro"/>
+                    </div>
+                    <div class="input">
+                        <label>Description</label>
+                        <textarea style="height: 200px; border-radius: 5px;" formControlName="description" [(ngModel)]="image.description"></textarea>
+                    </div>
                 </div>
-                <div class="input">
-                    <label>Name</label>
-                    <input type="text" formControlName="name" [(ngModel)]="admin.name" />
+                <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                    <div class="button">
+                        <input style="margin-top: 10px; width: 100px;" (click)="back()" type="button" value="Back">
+                    </div>
+                    <div class="button">
+                        <input style="margin-top: 10px; width: 100px;" type="submit" value="Save">
+                    </div>
                 </div>
-                <div class="input">
-                    <label>Phone</label>
-                    <input type="text" formControlName="phone" [(ngModel)]="admin.phone" />
-                </div>
-                <div class="input">
-                    <label>Username</label>
-                    <input type="text" formControlName="username" [(ngModel)]="admin.username" />
-                </div>
-                <div class="input">
-                    <label>Website</label>
-                    <input type="text" formControlName="website" [(ngModel)]="admin.website" />
-                </div>
-            </div>
-            <div class="row button">
-                <input type="submit" value="Login">
-            </div>
-            <div class="signup-link">Not a member? <a routerLink="/admin">Signup now</a></div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
+</body>
+</html>

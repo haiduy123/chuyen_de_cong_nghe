@@ -2,15 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { MatDialog } from '@angular/material/dialog';
 import { EditComponent } from '../edit/edit.component';
+import { DeletePageComponent } from '../delete-page/delete-page.component';
+import { AnotherService } from '../services/another.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-btn-cell-renderer',
   templateUrl: './btn-cell-renderer.component.html',
   styleUrls: ['./btn-cell-renderer.component.scss']
 })
-export class BtnCellRendererComponent implements OnInit, ICellRendererAngularComp{
+export class BtnCellRendererComponent implements OnInit, ICellRendererAngularComp {
 
   cellValue: any;
-  constructor(private dialog: MatDialog) { }
+  constructor(
+    private dialog: MatDialog,
+    private anotherService: AnotherService,
+    private toast: ToastrService,
+  ) { }
 
   agInit(params: any): void {
     this.cellValue = params
@@ -27,17 +34,22 @@ export class BtnCellRendererComponent implements OnInit, ICellRendererAngularCom
     const dataCLass: any = {};
     dataCLass.action = action;
     dataCLass.doc = this.cellValue.data;
-    console.log(dataCLass.doc)
+    console.log(dataCLass)
     this.dialog.open(EditComponent, {
       data: dataCLass,
-      // panelClass: 'school-year',
       width: '525px',
-      height: '586px'
+      height: '750px'
     })
-    // .afterClosed().subscribe(() => {
-    //   // xem lại
-    //   this.documentaryService.changeIsUpdate(true)
-    //   this.toast.success("Thay đổi thành công");
-    // })
+  }
+
+  openDelete(): void {
+    const dataCLass: any = {};
+    dataCLass.doc = this.cellValue.data;
+    console.log(dataCLass)
+    this.dialog.open(DeletePageComponent, {
+      data: dataCLass,
+      width: '500px',
+      height: '300px'
+    })
   }
 }

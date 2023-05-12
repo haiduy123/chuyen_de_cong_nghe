@@ -1,21 +1,32 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="en" style="background-color: red;">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
     <div class="wrapper">
       <div class="title"><span>Login Form</span></div>
       <form action="#">
         <div class="content-form">
           <div class="input">
             <label>Username</label>
-            <input type="text" required>
+            <input type="text" required [(ngModel)]="username" name="something">
           </div>
           <div class="input">
             <label>Password</label>
-            <input type="password" required>
+            <input type="password" required [(ngModel)]="password" name="something">
           </div>
         </div>
         <div class="row button">
-          <input type="submit" value="Login">
+          <input type="submit" (click)="checkLogin()" value="Login">
         </div>
         <div class="signup-link">Not a member? <a routerLink="/admin">Signup now</a></div>
       </form>
     </div>
   </div>
+</body>
+</html>

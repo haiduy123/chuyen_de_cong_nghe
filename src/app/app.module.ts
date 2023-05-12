@@ -26,9 +26,12 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { BtnCellRendererComponent } from './btn-cell-renderer/btn-cell-renderer.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { EditComponent } from './edit/edit.component';
+import { FormsModule } from '@angular/forms';
+import { DeletePageComponent } from './delete-page/delete-page.component';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
-  declarations: [AppComponent, EmpAddEditComponent, LoginComponent, AdminPageComponent, BtnCellRendererComponent, EditComponent],
+  declarations: [AppComponent, EmpAddEditComponent, LoginComponent, AdminPageComponent, BtnCellRendererComponent, EditComponent, DeletePageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -49,7 +52,9 @@ import { EditComponent } from './edit/edit.component';
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
-    AgGridModule
+    AgGridModule,
+    FormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
