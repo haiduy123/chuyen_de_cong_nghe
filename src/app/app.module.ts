@@ -29,9 +29,10 @@ import { EditComponent } from './edit/edit.component';
 import { FormsModule } from '@angular/forms';
 import { DeletePageComponent } from './delete-page/delete-page.component';
 import {ToastrModule} from 'ngx-toastr';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
-  declarations: [AppComponent, EmpAddEditComponent, LoginComponent, AdminPageComponent, BtnCellRendererComponent, EditComponent, DeletePageComponent],
+  declarations: [AppComponent, EmpAddEditComponent, LoginComponent, AdminPageComponent, BtnCellRendererComponent, EditComponent, DeletePageComponent, AuthenticateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

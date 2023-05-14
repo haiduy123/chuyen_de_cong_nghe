@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AnotherService } from '../services/another.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthenticateComponent } from '../authenticate/authenticate.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,6 +15,7 @@ export class LoginComponent {
     private anotherService: AnotherService,
     private router: Router,
     private toastr: ToastrService,
+    private dialog: MatDialog,
   ) {}
   username = "";
   password = "";
@@ -27,12 +30,12 @@ export class LoginComponent {
       if(res.ok == true) {
         this.router.navigate([ '/admin' ])
       } 
-      // else {
-      //   this.toastr.error("Hello world!", "Sai tài khoản", {
-      //     titleClass: "center",
-      //     messageClass: "center"
-      //   });
-      // }
+      else {
+        this.dialog.open(AuthenticateComponent, {
+          width: '500px',
+          height: '350px'
+        })
+      }
       console.log(res)
     })
     // console.log(data);

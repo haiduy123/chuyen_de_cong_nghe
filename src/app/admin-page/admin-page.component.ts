@@ -46,7 +46,7 @@ export class AdminPageComponent {
       cellRenderer: (params: { data: { pic: any; }; }) => `<img style="height: 500px; width: 100%" src=${params.data.pic} />`
     },
     {
-      headerName: "Button",
+      headerName: "Action",
       field: 'bronze',
       cellRenderer: BtnCellRendererComponent
     }
