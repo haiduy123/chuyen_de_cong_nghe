@@ -1,4 +1,4 @@
-.button {
+.button-add {
     width: 200px;
     height: 50px;
     border-radius: 5%;
@@ -7,4 +7,17 @@
     margin-bottom: 20px;
     font-weight: 600;
     font-size: 20px;
+}
+
+.button-faulty {
+    width: 200px;
+    height: 50px;
+    border-radius: 5%;
+    background-color: red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 50px;
+    color: #fff;
 }

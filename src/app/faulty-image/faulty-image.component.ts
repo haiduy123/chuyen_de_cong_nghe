@@ -2,18 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ColDef, GridReadyEvent } from 'ag-grid-community';
 import { Observable } from 'rxjs';
-import { BtnCellRendererComponent } from '../btn-cell-renderer/btn-cell-renderer.component';
 import { MatDialog } from '@angular/material/dialog';
-import { EditComponent } from '../edit/edit.component';
 import { AnotherService } from '../services/another.service';
 import { Router } from '@angular/router';
-@Component({
-  selector: 'app-admin-page',
-  templateUrl: './admin-page.component.html',
-  styleUrls: ['./admin-page.component.scss']
-})
+import { FaultyCellRendererComponent } from '../faulty-cell-renderer/faulty-cell-renderer.component';
 
-export class AdminPageComponent {
+@Component({
+  selector: 'app-faulty-image',
+  templateUrl: './faulty-image.component.html',
+  styleUrls: ['./faulty-image.component.scss']
+})
+export class FaultyImageComponent {
 
   constructor(
     private http: HttpClient,
@@ -25,30 +24,22 @@ export class AdminPageComponent {
 
   public columnDefs: ColDef[] = [
     {
-      field: 'id',
+      field: 'faultyImgId',
       width: 20
     },
     {
-      field: 'name',
+      field: 'userLabel',
       width: 100
-    },
-    {
-      field: 'intro',
-      width: 100
-    },
-    {
-      field: 'description',
-      width: 356
     },
     {
       headerName: "Image",
-      field: 'pic',
-      cellRenderer: (params: { data: { pic: any; }; }) => `<img style="height: 500px; width: 100%" src=${params.data.pic} />`
+      field: 'img',
+      cellRenderer: (params: { data: { img: any; }; }) => `<img style="height: 500px; width: 100%" src=${params.data.img} />`
     },
     {
       headerName: "Action",
       field: 'bronze',
-      cellRenderer: BtnCellRendererComponent
+      cellRenderer: FaultyCellRendererComponent
     }
   ];
   public defaultColDef: ColDef = {
@@ -63,21 +54,6 @@ export class AdminPageComponent {
   onGridReady(params: GridReadyEvent) {
     params.api.sizeColumnsToFit();
     this.rowData$ = this.http
-      .get<any[]>('http://localhost:8081/api/img');
-  }
-
-  add() {
-    const dataCLass: any = {};
-    dataCLass.action = 'Create';
-    console.log(dataCLass.doc)
-    this.dialog.open(EditComponent, {
-      data: dataCLass,
-      width: '525px',
-      height: '750px'
-    })
-  }
-  
-  faultyImage() {
-    this.router.navigate([ '/faulty' ]);
+      .get<any[]>('http://localhost:8081/api/img/faulty');
   }
 }

@@ -28,4 +28,12 @@ export class AnotherService {
   deleteImage(id: number): Observable<any> {
     return this._http.delete(`http://localhost:8081/api/img/${id}`);
   }
+
+  deleteFaultyImage(id: number): Observable<any> {
+    return this._http.delete(`http://localhost:8081/api/img/faulty/${id}`);
+  }
+
+  approveImage(id: number, labelId: number): Observable<any> {
+    return this._http.get(`http://localhost:8081/api/img/faulty/${id}/${labelId}`);
+  }
 }

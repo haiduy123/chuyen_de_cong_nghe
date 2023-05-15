@@ -5,12 +5,14 @@ import { EditComponent } from '../edit/edit.component';
 import { DeletePageComponent } from '../delete-page/delete-page.component';
 import { AnotherService } from '../services/another.service';
 import { ToastrService } from 'ngx-toastr';
+import { ApproveImageComponent } from '../approve-image/approve-image.component';
+
 @Component({
-  selector: 'app-btn-cell-renderer',
-  templateUrl: './btn-cell-renderer.component.html',
-  styleUrls: ['./btn-cell-renderer.component.scss']
+  selector: 'app-faulty-cell-renderer',
+  templateUrl: './faulty-cell-renderer.component.html',
+  styleUrls: ['./faulty-cell-renderer.component.scss']
 })
-export class BtnCellRendererComponent implements OnInit, ICellRendererAngularComp {
+export class FaultyCellRendererComponent implements OnInit, ICellRendererAngularComp {
 
   cellValue: any;
   constructor(
@@ -30,15 +32,14 @@ export class BtnCellRendererComponent implements OnInit, ICellRendererAngularCom
   ngOnInit(): void {
   }
 
-  openEdit(action: string): void {
+  openApprove(): void {
     const dataCLass: any = {};
-    dataCLass.action = action;
     dataCLass.doc = this.cellValue.data;
     console.log(dataCLass)
-    this.dialog.open(EditComponent, {
+    this.dialog.open(ApproveImageComponent, {
       data: dataCLass,
       width: '525px',
-      height: '750px'
+      height: '400px'
     })
   }
 

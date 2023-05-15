@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="title"><span>Approve Image</span></div>
+            <div class="input">
+                <label>Label ID</label>
+                <input type="text" [(ngModel)]="labelId" />
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                <div>
+                    <input class="button" style="margin-top: 10px; width: 100px;" (click)="back()" type="button" value="Back">
+                </div>
+                <div>
+                    <input class="button" style="margin-top: 10px; width: 100px;" (click)="approveImage()" type="button" value="Approve">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

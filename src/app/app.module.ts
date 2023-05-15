@@ -30,9 +30,12 @@ import { FormsModule } from '@angular/forms';
 import { DeletePageComponent } from './delete-page/delete-page.component';
 import {ToastrModule} from 'ngx-toastr';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { FaultyImageComponent } from './faulty-image/faulty-image.component';
+import { FaultyCellRendererComponent } from './faulty-cell-renderer/faulty-cell-renderer.component';
+import { ApproveImageComponent } from './approve-image/approve-image.component';
 
 @NgModule({
-  declarations: [AppComponent, EmpAddEditComponent, LoginComponent, AdminPageComponent, BtnCellRendererComponent, EditComponent, DeletePageComponent, AuthenticateComponent],
+  declarations: [AppComponent, EmpAddEditComponent, LoginComponent, AdminPageComponent, BtnCellRendererComponent, EditComponent, DeletePageComponent, AuthenticateComponent, FaultyImageComponent, FaultyCellRendererComponent, ApproveImageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
