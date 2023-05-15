@@ -29,7 +29,7 @@ export class ApproveImageComponent implements OnInit {
       console.log(res)
     })
     this.dialogRef.close();
-    // window.location.reload();
+    window.location.reload();
   }
 
   back() {
